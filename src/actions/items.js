@@ -5,3 +5,10 @@ export const fetchOldProduct = id => ({
   type: FETCH_OLD_PRODUCT,
   payload: getOldProduct(id)
 });
+
+export const ADD_FILTERED_PRODUCT = 'ADD_FILTERED_PRODUCT';
+export const addFilteredProduct = product => ({
+  type: ADD_FILTERED_PRODUCT,
+  payload: product
+});
+

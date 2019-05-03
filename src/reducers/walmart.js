@@ -7,14 +7,16 @@ import {
 } from '../actions/searchTerm';
 
 import { 
-  FETCH_OLD_PRODUCT
+  FETCH_OLD_PRODUCT,
+  ADD_FILTERED_PRODUCT
 } from '../actions/items';
 
 
 const initialState = {
   productIds: [],
   searchTerm: '',
-  oldProducts: []
+  oldProducts: [],
+  filteredProducts: []
 };
 
 export default function reducer(state = initialState, action) {
@@ -29,6 +31,12 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         oldProducts: [...action.payload]
+      };
+
+    case ADD_FILTERED_PRODUCT:
+      return {
+        ...state,
+        filteredProducts: [...action.payload]
       };
     
     case UPDATE_SEARCH_TERM:
